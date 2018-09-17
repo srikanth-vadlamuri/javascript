@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Javascript DOM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+    <h1 id="head1">JS DOM Navigation</h1>
+    <div>
+        <h1>Demo heading</h1>
+        <p class="para1">1cool calm comedy .2cool calm comedy</p>
+        <p class="Para2">3cool calm comedy .4cool calm comedy</p>
+        <p>5cool calm comedy .6cool calm comedy</p>
+        <p>7cool calm comedy .8cool calm comedy</p>
+        <p>9cool calm comedy .10cool calm comedy</p>
+    </div>
+    <script>
+        var idRef=document.getElementById("head1")
+        idRef.innerHTML="Javascript DOM navigation"
+          
+        var tarRef=document.getElementsByTagName("p")  
+      //  tarRef[0].innerHTML="I am being modified and i am para1"
+          console.log(tarRef);
+          for (i = 0; i < tarRef.length; i++) {
+              tarRef[i].innerHTML=i+"This is the updated para"
+              
+          }
+           
+           var classRef=document.getElementsByClassName("para1")
+           console.log(classRef);
+
+           classRef[0].innerHTML="i am from the class";
+
+           var querRef=document.querySelector("p.para1")
+            console.log(querRef);
+    </script>
+</body>
+
+</html>

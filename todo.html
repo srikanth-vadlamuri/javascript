@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ToDo in Javascript</title>
+</head>
+
+<body domloaded()>
+      
+    <h3>Javascript Todo</h3>
+
+    <label for="todo">TODO Item:</label>
+    <input type="text">
+    <button onclick="addTodo()">Add Todo</button>
+    <div id="todoList">
+
+    </div>  
+    
+    <script>
+       // var count=0;
+        
+        //Create new ul element outside DOM
+        var newUl = document.createElement("ol")
+        var todoListRef = document.getElementById("todoList")
+        todoListRef.innerHTML = "ToDO List will come here!"
+        //insert element to DOM
+        function addTodo() {
+           //Save todo to local storage
+           
+
+            console.log("DOM creation form JS");
+            var valueInput = document.getElementsByTagName("input")[0].value
+           
+            saveTodo(valueInput)
+
+            //Create new li element outside DOM
+
+            var newLi = document.createElement("li");
+            newLi.innerHTML = valueInput
+            //Append newLi to neUl
+
+            newUl.appendChild(newLi)
+            //append new element to dom
+            todoListRef.appendChild(newUl)
+             
+            var fn=valueInput
+            
+           function saveTodo(valueInput){
+            if(fn!=""){
+                var count=localStorage.getItem("count");
+                if (count==null){
+                    count=0;
+                }
+                var newcount=parseInt(count)+1;
+                localStorage.setItem("TODO_"+newcount,valueInput)
+                localStorage.setItem("count",newcount)
+              }
+            }
+            
+          
+           }  
+        function domloaded(){
+            count1=localStorage.getItem(count);
+          for (var count3=1;  count3< count1; count3++) {
+              var li=localStorage.getItem("TODO_"+count3)
+              
+              
+          }
+            
+             
+        }
+        
+   
+    </script>
+
+</body>
+
+</html>
